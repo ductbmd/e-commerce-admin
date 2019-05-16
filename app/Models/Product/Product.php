@@ -26,4 +26,8 @@ class Product extends Model
     {
     	return $this->hasOne(\Laraspace\Models\Company::class,'id','company_id');
     }
+    public function details()
+    {
+    	return $this->hasMany(\Laraspace\Models\Product\ProductDetail::class,'product_id','id');
+    }
 }

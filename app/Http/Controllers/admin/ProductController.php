@@ -24,7 +24,7 @@ class ProductController extends Controller
     	$companies=Company::all()->mapWithKeys(function ($item) {
 		    return [$item['id'] => $item['name']];
 		});
-		$products=$this->model->with('files.file')->with('company')->get();
+		$products=$this->model->with('files.file')->with('company')->with('details')->get();
 		/*dd($products);*/
     	return view('product.create')->with('companies',$companies)->with('products',$products);
     }

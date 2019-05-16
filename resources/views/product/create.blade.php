@@ -94,10 +94,28 @@
                                         <div class="col-md-3">Tai nghe:</div>
                                         <div class="col-md-9">{{$product->headphone_jack}}</div>
                                     </div>
-                                <td><button type="button" class="btn btn-theme" data-toggle="modal" data-target="#product{{$product->id}}">
-                                    Show IMG
-                                </button></td>
+                                <td>
+                                <div role="group" aria-label="Button group with nested dropdown" class="btn-group-vertical">
+                                    <button type="button" class="btn btn-theme" data-toggle="modal" data-target="#product{{$product->id}}">
+                                   <i class="icon-fa icon-fa-camera"></i> Show IMG
+                                    </button>
+                                    <!-- Show img btn -->
+                                    <button type="button" class="btn btn-theme" data-toggle="modal" data-target="#detail{{$product->id}}">
+                                   <i class="icon-fa icon-fa-plus-circle"></i></i> Detail
+                                </button>
+                               <!--  Btn Detail -->
+                                    <div role="group" class="btn-group">
+                                        <button id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-outline-primary dropdown-toggle">
+                                            <i class="icon-fa icon-fa-cog"></i>Edit                                </button> 
+                                            <div aria-labelledby="btnGroupDrop1" class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                <a href="#" class="dropdown-item">Edit</a> 
+                                                <a href="#" class="dropdown-item">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
+                            <!-- Image product -->
                             <div id="product{{$product->id}}" class="modal fade ls-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
@@ -131,6 +149,33 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- End img product -->
+                                <!-- Detail Product -->
+                                 <div id="detail{{$product->id}}" class="modal fade ls-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-success">
+                                                <h5 class="modal-title" id="exampleModalLabel">Detail Product</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                   
+                                                @foreach($product->details as $detail)
+                                                    
+                                                @endforeach
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End detail product -->
                             @endforeach
                             </tbody>
                     </table>
