@@ -15,7 +15,15 @@ Route::group([
     'prefix'=>'superadmin',
 ], function (){
     Route::resource('product','admin\ProductController');
+    Route::resource('laptop','admin\LaptopController');
     Route::resource('company','admin\CompanyController');
+    Route::resource('category','admin\CategoryController');
+    Route::post('category-product',[ 'as' => 'category.product', 'uses' => 'admin\CategoryController@storeProduct']);
+    Route::post('category-laptop',[ 'as' => 'category.laptop', 'uses' => 'admin\CategoryController@storeLaptop']);
+    Route::resource('discount','admin\DiscountController');
+    Route::post('discount-product',[ 'as' => 'discount.product', 'uses' => 'admin\DiscountController@storeProduct']);
+    Route::post('discount-laptop',[ 'as' => 'discount.laptop', 'uses' => 'admin\DiscountController@storeLaptop']);
+
 });
 
 /*

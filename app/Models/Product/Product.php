@@ -16,7 +16,7 @@ class Product extends Model
     public static $type=[self::mobile=>'Mobile',self::laptop=>'Laptop'];	
     protected $table='product';
     protected $fillable = [
-        'company_id','name','description','size','OS','camera_front','camera_back','CPU','RAM','ROM','memory_card','SIM_card','Pin','GPU','headphone_jack','type'
+        'company_id','name','description','size','OS','camera_front','camera_back','CPU','RAM','ROM','memory_card','SIM_card','Pin','GPU','headphone_jack','type','price'
     ];
     public function files()
     {
@@ -29,5 +29,13 @@ class Product extends Model
     public function details()
     {
     	return $this->hasMany(\Laraspace\Models\Product\ProductDetail::class,'product_id','id');
+    }
+    public function category()
+    {
+        return $this->hasMany(\Laraspace\Models\Product\ProductCategory::class,'product_id','id');
+    }
+    public function discount()
+    {
+        return $this->hasMany(\Laraspace\Models\Product\ProductDiscount::class,'product_id','id');
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laraspace - Laravel Admin</title>
+    <title>Tô Bá Minh Đức - Admin</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
     <script src="{{asset('/assets/admin/js/core/pace.js')}}"></script>
     <link href="{{ mix('/assets/admin/css/laraspace.css') }}" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
         @include('admin.layouts.partials.header')
         <div class="mobile-menu-overlay"></div>
         <!-- @include('admin.layouts.partials.sidebar',['type' => 'default']) -->
-
+        @include('admin.layouts.partials.mysidebar',['type' => 'default'])
         @yield('content')
 
         @include('admin.layouts.partials.footer')
@@ -31,6 +31,11 @@
     <script src="{{mix('/assets/admin/js/core/plugins.js')}}"></script>
     <script src="{{asset('/assets/admin/js/demo/skintools.js')}}"></script>
     <script src="{{mix('/assets/admin/js/core/app.js')}}"></script>
+    <script type="text/javascript">
+  function form_submit() {
+    document.getElementById("search_form").submit();
+   }    
+  </script>
     @yield('scripts')
 </body>
 </html>

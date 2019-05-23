@@ -29,7 +29,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Product Name</th>
-                                <th>Description</th>
+                                <!-- <th>Description</th> -->
                                 <th>configuration</th>
                                 <th>Image</th>
                             </tr>
@@ -40,7 +40,7 @@
                             <tr>
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
-                                <td>{{$product->description}}</td>
+                                <!-- <td>{{$product->description}}</td> -->
                                 <td>
                                     <div class="row">
                                         <div class="col-md-3">Company:</div>
@@ -161,20 +161,66 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                   
+                                                   <div class="row">
+                                                        <div class="col-md-1 text-center">Id</div>
+                                                        <div class="col-md-2 text-center">ProductID</div>
+                                                        <div class="col-md-3 text-center">Color</div>
+                                                        <div class="col-md-2 text-center">Price Add</div>
+                                                        <div class="col-md-1 text-center">Qty</div>
+                                                        <div class="col-md-3 text-center">configuration</div>
+                                                    </div>
+
                                                 @foreach($product->details as $detail)
-                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-1 text-center">{{$detail->id}}</div>
+                                                        <div class="col-md-2 text-center">{{$detail->product_id}}</div>
+                                                        <div class="col-md-3 text-center">{{$detail->color}}</div>
+                                                        <div class="col-md-2 text-center">{{$detail->price}}</div>
+                                                        <div class="col-md-1 text-center">{{$detail->qty}}</div>
+                                                        <div class="col-md-3 text-center">{{$detail->configuration}}</div>
+                                                    </div>
                                                 @endforeach
                                                 </div>
+                                                <hr>
+                                                <form action="{{ route('productDetail.store') }}" method="POST" >
+                                                    @csrf
+                                                     <input type="hidden" id="productID" name="product_id" value="{{$product->id}}">
+                                                    <div class="form-group row">
+                                                        <label for="color" class="col-sm-3 col-form-label text-center">Color</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="color" name="color" placeholder="color">
+                                                        </div>
+                                                    </div>
+                                                     <div class="form-group row">
+                                                        <label for="color" class="col-sm-3 col-form-label text-center">Price</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="price" name="price" placeholder="price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="color" class="col-sm-3 col-form-label text-center">QTY</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="qty" name="qty" placeholder="qty">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="color" class="col-sm-3 col-form-label text-center">Configuration</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="configuration" name="configuration" placeholder="configuration">
+                                                        </div>
+
+                                                    </div>
+                                                    <button class="btn btn-success" type="submit">Submit</button>
+                                                </form>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                
+                                            </div>
                                             </div>
 
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
-                                </div>
                                 <!-- End detail product -->
                             @endforeach
                             </tbody>
@@ -224,6 +270,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="price" class="col-sm-3 col-form-label">Price</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="OS" class="col-sm-3 col-form-label">Type</label>
                     <div class="col-sm-9">
                         @foreach(Laraspace\Models\Product\Product::$type as $key=>$value)
@@ -238,7 +290,8 @@
                 <div class="form-group row">
                     <label for="description" class="col-sm-3 col-form-label">Description</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="description" name="description" placeholder="description">
+                        <textarea rows="4"  class="form-control" id="description" name="description" placeholder="description">
+                        </textarea>
                     </div>
                 </div>
                 <div class="form-group row">
