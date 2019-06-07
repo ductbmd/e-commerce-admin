@@ -49,7 +49,10 @@ class DiscountController extends Controller
     public function storeProduct(Request $request)
     {
     	foreach ($request->listProduct as $product_id) {
-    		ProductDiscount::Create(['product_id'=>$product_id,'discount_id'=>$request->discount_id,'description'=>'Discount dien thoai']);
+            $product=$this->product->find($product_id);
+            $product->discount_id=$request->discount_id;
+            $product->save();
+    		/*ProductDiscount::Create(['product_id'=>$product_id,'discount_id'=>$request->discount_id,'description'=>'Discount dien thoai']);*/
     	}
     	flash()->success('Create Discount-Product success.');
         
@@ -58,7 +61,10 @@ class DiscountController extends Controller
     public function storeLaptop(Request $request)
     {   
         foreach ($request->listLaptop as $product_id) {
-            LaptopDiscount::Create(['laptop_id'=>$product_id,'discount_id'=>$request->discount_id,'description'=>'Discount laptop']);
+            $laptop=Laptop::find($product_id);
+            $laptop->discount_id=$request->discount_id;
+            $laptop->save();
+            // LaptopDiscount::Create(['laptop_id'=>$product_id,'discount_id'=>$request->discount_id,'description'=>'Discount laptop']);
         }
         flash()->success('Create Discount-Product success.');
         

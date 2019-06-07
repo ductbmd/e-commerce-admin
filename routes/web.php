@@ -13,8 +13,10 @@ Route::get('/', [
 ]);
 Route::group([
     'prefix'=>'superadmin',
+    'middleware' => 'admin'
 ], function (){
     Route::resource('product','admin\ProductController');
+    Route::POST('productDetail',[ 'as' => 'productDetail.store', 'uses' => 'admin\ProductController@storeDetail']);
     Route::resource('laptop','admin\LaptopController');
     Route::resource('company','admin\CompanyController');
     Route::resource('category','admin\CategoryController');
@@ -23,7 +25,14 @@ Route::group([
     Route::resource('discount','admin\DiscountController');
     Route::post('discount-product',[ 'as' => 'discount.product', 'uses' => 'admin\DiscountController@storeProduct']);
     Route::post('discount-laptop',[ 'as' => 'discount.laptop', 'uses' => 'admin\DiscountController@storeLaptop']);
-
+    Route::get('user',[ 'as' => 'user.config', 'uses' => 'admin\AdminController@getuser']);
+    Route::get('userdelete/{id}',[ 'as' => 'user.delete', 'uses' => 'admin\AdminController@deleteUser']);
+    Route::get('useractive/{id}',[ 'as' => 'user.active', 'uses' => 'admin\AdminController@activeUser']);
+    Route::get('ecommerce',[ 'as' => 'ecommerce', 'uses' => 'admin\AdminController@ecommerce']);
+    Route::get('order',[ 'as' => 'order', 'uses' => 'admin\AdminController@order']);
+    Route::get('order/{id}',[ 'as' => 'viewOrder', 'uses' => 'admin\AdminController@viewOrder']);
+    Route::get('orderdone/{id}',[ 'as' => 'order.done', 'uses' => 'admin\AdminController@orderDone']);
+    Route::get('orderStatistic',[ 'as' => 'statisticOrder', 'uses' => 'admin\AdminController@statisticOrder']);
 });
 
 /*

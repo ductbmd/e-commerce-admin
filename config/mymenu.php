@@ -17,20 +17,72 @@ return [
 
     'sidebar' => [
         [
-            'title' => 'Product',
+            'title' => 'Thống kê',
             'link' => '#',
-            'active' => 'superadmin/Product*',
-            'icon' => 'icon-fa icon-fa-dashboard',
+            'active' => 'superadmin/ecommerce*',
+            'icon' => 'icon-fa icon-fa-bar-chart',
             'children' => [
                 [
-                    'title' => 'Product',
+                    'title' => 'Tổng quan',
+                    'link' => '/superadmin/ecommerce',
+                    'active' => 'superadmin/ecommerce',
+                ],
+                [
+                    'title' => 'Doanh thu',
+                    'link' => '/superadmin/orderStatistic',
+                    'active' => 'superadmin/orderStatistic',
+                ],
+                
+            ]
+        ],
+        [
+            'title' => 'Đơn hàng',
+            'link' => '#',
+            'active' => 'superadmin/ecommerce*',
+            'icon' => 'icon-fa icon-fa-shopping-cart',
+            'children' => [
+                [
+                    'title' => 'Đơn hàng',
+                    'link' => '/superadmin/order',
+                    'active' => 'superadmin/order',
+                ],
+                
+            ]
+        ],
+        [
+            'title' => 'Sản phẩm',
+            'link' => '#',
+            'active' => 'superadmin/Product*',
+            'icon' => 'icon-fa icon-fa-mobile-phone',
+            'children' => [
+                [
+                    'title' => 'Điện thoại',
                     'link' => '/superadmin/product',
                     'active' => 'superadmin/product',
                 ],
                 [
-                    'title' => 'Company',
+                    'title' => 'Máy tính xách tay',
+                    'link' => '/superadmin/laptop',
+                    'active' => 'superadmin/laptop',
+                ],
+                [
+                    'title' => 'Nhà sản xuất',
                     'link' => '/superadmin/company',
                     'active' => 'superadmin/company',
+                ],
+                
+            ]
+        ],
+        [
+            'title' => 'Khách hàng',
+            'link' => '#',
+            'active' => 'superadmin/Category*',
+            'icon' => 'icon-fa icon-fa-user',
+            'children' => [
+                [
+                    'title' => 'Khách hàng',
+                    'link' => '/superadmin/user',
+                    'active' => '/superadmin/user',
                 ],
                 
             ]
@@ -39,11 +91,25 @@ return [
             'title' => 'Category',
             'link' => '#',
             'active' => 'superadmin/Category*',
-            'icon' => 'icon-fa icon-fa-th-large',
+            'icon' => 'icon-fa icon-fa-bookmark',
             'children' => [
                 [
                     'title' => 'Category',
                     'link' => '/superadmin/category',
+                    'active' => 'admin/layouts/sidebar',
+                ],
+                
+            ]
+        ],
+        [
+            'title' => 'Khuyễn mãi',
+            'link' => '#',
+            'active' => 'superadmin/discount*',
+            'icon' => 'icon-fa icon-fa-google-wallet',
+            'children' => [
+                [
+                    'title' => 'Khuyễn mãi',
+                    'link' => '/superadmin/discount',
                     'active' => 'admin/layouts/sidebar',
                 ],
                 

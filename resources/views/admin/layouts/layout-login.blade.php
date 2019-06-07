@@ -12,12 +12,12 @@
     <div class="login-box">
         @include('admin.layouts.partials.laraspace-notifs')
         <div class="logo-main">
-            <a href="/"><img src="/assets/admin/img/logo-large.png" alt="Laraspace Logo"></a>
+            <a href="/"><img src="/assets/admin/img/test.jpg" alt="MinhDuc Logo"></a>
         </div>
         @yield('content')
         <div class="page-copyright">
-            <p>Powered by <a href="http://bytefury.com" target="_blank">Bytefury</a></p>
-            <p>Laraspace © {{ date('Y') }}</p>
+            <p>Powered by <a href="https://www.facebook.com/tobaminhduc1" target="_blank">Tô Đức</a></p>
+            <p>Đồ án © {{ date('Y') }}</p>
         </div>
     </div>
 </div>

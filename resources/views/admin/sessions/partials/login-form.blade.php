@@ -19,7 +19,7 @@
         </div>
     </div>
     <button class="btn btn-theme btn-full">Login</button>
-    <div class="form-group other-options">
+   <!--  <div class="form-group other-options">
         <div class="social-caption pull-left">
             <h6>
                 Or Login With
@@ -30,5 +30,5 @@
             <a href="/auth/google" class="btn btn-default text-danger btn-icon"><i class="icon-fa icon-fa-google"></i></a>
             <a href="/auth/github" class="btn btn-default btn-icon text-default"><i class="icon-fa icon-fa-github"></i></a>
         </div>
-    </div>
+    </div> -->
 </form>

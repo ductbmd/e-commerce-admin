@@ -70,7 +70,7 @@
                         </h5>
                        <select class="form-control ls-select2"  name="discount_id">
                        	@foreach($discounts as $key=>$discount)
-                            <option value="{{$discount->id}}">[{{$discount->id}}]{{$discount->time_expired}}*{{$discount->type}}</option>
+                            <option value="{{$discount->id}}">[{{$discount->id}}]{{$discount->time_expired}}*{{$discount->type}}-{{$discount->discount}}%</option>
                         @endforeach
                         </select>
                         <br><br>
@@ -93,7 +93,7 @@
                         </h5>
                        <select class="form-control ls-select2"  name="discount_id">
                        	@foreach($discounts as $key=>$discount)
-                            <option value="{{$discount->id}}">[{{$discount->id}}]-{{$discount->time_expired}}*{{$discount->type}}</option>
+                            <option value="{{$discount->id}}">[{{$discount->id}}]-{{$discount->time_expired}}*{{$discount->type}}-{{$discount->discount}}%</option>
                         @endforeach
                         </select>
                         <br><br>

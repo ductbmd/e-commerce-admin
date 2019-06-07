@@ -18,7 +18,7 @@ class AuthController extends Controller
         if (User::login($request)) {
             flash()->success('Welcome to Laraspace.');
             if (Auth::user()->isAdmin()) {
-                return redirect()->to('/admin');
+                return redirect()->to('/superadmin/ecommerce');
             } else {
                 return redirect()->to('/');
             }

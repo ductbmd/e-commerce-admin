@@ -13,11 +13,11 @@
     <div class="login-box">
         @include('admin.layouts.partials.laraspace-notifs')
         <div class="logo-main">
-            <a href="/"><img src="/assets/admin/img/logo-login.png" alt="Laraspace Logo"></a>
+            <!-- <a href="/"><img src="/assets/admin/img/logo-login.png" alt="Laraspace Logo"></a> -->
         </div>
         @yield('content')
         <div class="page-copyright">
-            <p>Powered by <a href="http://bytefury.com" target="_blank">Bytefury</a></p>
+            <p>Powered by <a href="https://www.facebook.com/tobaminhduc1" target="_blank">To Duc</a></p>
             <p>Laraspace © {{ date('Y') }}</p>
         </div>
     </div>
