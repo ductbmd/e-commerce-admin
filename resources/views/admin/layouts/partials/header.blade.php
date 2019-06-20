@@ -1,6 +1,6 @@
 <header class="site-header">
   <a href="#" class="brand-main">
-    Tô Bá Minh Đức 
+    NQC 
   </a>
   <a href="#" class="nav-toggle">
     <div class="hamburger hamburger--htla">
